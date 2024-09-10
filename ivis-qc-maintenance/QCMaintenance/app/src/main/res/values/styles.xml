@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+        // Important to draw through the cutouts
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:ignore="NewApi">shortEdges</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="AppTheme">
+        <item name="colorControlNormal">@color/colorWorkOrderChecklistdefault</item>
+        <item name="colorAccent">@color/colorDashboardApps</item>
+    </style>
+
+    <style name="CustomAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">#FFFFFF</item> <!-- Set background color to white -->
+        <item name="android:textColorPrimary">#000000</item> <!-- Optional: set text color to black -->
+    </style>
+</resources>

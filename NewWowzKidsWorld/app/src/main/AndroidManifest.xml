@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NewWowzKidsWorld"
+
+        tools:targetApi="31">
+        <activity
+            android:name=".teacher.postattendance.PostAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".teacher.viewattendance.ViewAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".teacher.postassignments.PostAssignmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".teacher.teacherdashboard.TeacherDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parents.liveclasses.LiveClassesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parents.viewattendance.ViewAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parents.notifications.ParentNotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parents.feedetails.FeeDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parents.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parents.dashboard.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".parents.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.NewWowzKidsWorld">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".parents.livestream.LiveStreamActivity" android:exported="false"     android:theme="@style/LiveStreamTheme"></activity>
+    </application>
+
+</manifest>

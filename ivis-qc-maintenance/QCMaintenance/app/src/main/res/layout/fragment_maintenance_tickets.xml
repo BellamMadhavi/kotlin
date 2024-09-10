@@ -1,0 +1,129 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/top_maintenance_toolbar"
+            android:layout_width="match_parent"
+            android:id="@+id/layout1"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:weightSum="1"
+            android:padding="@dimen/dimen_10dp">
+
+            <ImageView
+                android:id="@+id/img_inspection_back"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/app_name"
+                app:tint="@color/colorPrimary"
+                android:src="@drawable/back_icon"
+                android:layout_weight="0.1"/>
+
+            <TextView
+                android:id="@+id/txt_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/img_inspection_back"
+                android:singleLine="false"
+                android:text=" "
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_weight="0.8"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_20dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/app_name"
+                app:tint="@color/black"
+                android:src="@drawable/schedules"
+                android:layout_weight="0.1"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_user"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_below="@+id/layout_title"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/black" />
+
+
+
+        <LinearLayout
+            android:id="@+id/layout_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_user"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Ticketsrecycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noSchedulesMessage_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/view_user"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/noSchedulesMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No schedules for today"
+                    android:visibility="visible"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

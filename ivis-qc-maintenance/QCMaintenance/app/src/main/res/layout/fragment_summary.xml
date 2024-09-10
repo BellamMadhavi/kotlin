@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/sensor_screen"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ivis.qcauditapp.fragment.TwoWayCallFragment">
+
+
+
+        <include
+            layout="@layout/top_toolbar_layout"
+            android:layout_width="match_parent"
+            android:id="@+id/layout1"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout2"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:layout_below="@id/layout1"
+            android:orientation="vertical">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardPreventCornerOverlap="true"
+                app:cardElevation="5dp"
+                android:id="@+id/card_view_layout"
+                app:cardCornerRadius="6dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:layout_gravity="start"
+                        android:gravity="center"
+                        android:textSize="18dp"
+                        android:text="Summary"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/summary_recyclerview"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+        <include
+            layout="@layout/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+</LinearLayout>

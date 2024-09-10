@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="theme_color">#F6AC22</color>
+    <color name="tabDark">#000000</color>
+
+    <color name="hint_color">#B9B9B9</color>
+    <color  name="backgroundColor">#454545</color>
+    <color name="red">#eb4646</color>
+    <color name="green">#00eb00</color>
+    //login screen
+    <color name="text_color_name">#3A3A3A</color>
+    <color name="aler_text_color_name">#3A4354</color>
+    <color name="bg_color">#3A4354</color>
+    <color name="home_color">#F0773D</color>
+    <color name="adapter_text_color">#F2844F</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="LightGray">#F3F3F3</color>
+    <color name="dividerColor">#D3D3D3</color>
+
+
+    <color name="colorDashboardWeekDay">#3a4354</color>
+    <color name="colorHeading">#3b414d</color>
+    <color name="colorHeadingOne">#3b414d</color>
+    <color name="colorPrimary">#3b414d</color>
+    <color name="colorPrimaryDark">#3b414d</color>
+    <color name="colorAccent">#3b414d</color>
+
+    <color name="colorRequestorInfoTitle">#677282</color>
+    <color name="colorDashboardApps">#1582c8</color>
+    <color name="colorDashboardCardHeader">#e9eced</color>
+    <color name="colorWorkOrderCheckListCircle">#b7c0c9</color>
+    <color name="main_disabled_color">#838383</color>
+    <color name="colorWorkOrderChecklistdefault">#677280</color>
+    <color name="color_blue">#f3f9fc</color>
+    <color name="colorMailRoomDevliver">#1582c8</color>
+    <color name="colorCompletedInspection">#009937</color>
+    <color name="colorMissedInspection">#ec5824</color>
+    <color name="colorButtonBackBackground">#e7e7e7</color>
+    <color name="usage_login_input">#d3d3d3</color>
+    <color name="colorButtonBackTextColor">#9a9a9a</color>
+
+    // cancel background color
+    <color name="colorCancelButtonbg">#CECECE</color>
+    <color name="colorToolbarbg">#E8ECED</color>
+    <color name="colortextsitename">#0091D5</color>
+
+    <color name="colortoolbarsitename">#414C5F</color>
+
+</resources>

@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">Qc Maintenance</string>
+    <string name="title_activity_unit_id">DashBoardActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hint_userName">User Id</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_Password">Password</string>
+    <string name="hint_PhoneNumber">Phone Number</string>
+    <string name="hint_Email">Email</string>
+    <string name="hint_Pincode">Pincode</string>
+    <string name="txt_confirmation">Confirmation</string>
+    //login screen
+
+    <string name="Login">Log in</string>
+    <string name="Continue">Continue</string>
+    <string name="Next">Next</string>
+    <string name="Back">Back</string>
+    <string name="start">Start QC</string>
+    <string name="qc_app">QC APP</string>
+    <string name="loading">Please wait...</string>
+    <string name="calling">Calling...</string>
+    //Maintenance screen
+    <string name="txt_choose_action">Action</string>
+    <string name="txt_maintenance">Maintenance</string>
+    <string name="txt_ticket_details">Ticket Details</string>
+    <string name="txt_maintenance_tckts">Maintenance Tickets</string>
+    <string name="txt_task_list">Task List Details</string>
+    <string name="txt_task">Task List</string>
+    <string name="txt_task_details">Task Details</string>
+    <string name="txt_task_status">Status</string>
+    <string name="txt_spars_status">Used Spares from Kit bag</string>
+    <string name="txt_spars_indent_status">Did we use spare kit / indent</string>
+    <string name="txt_spars_indent">These are the indented items for this ticket. Please select only the indents that related to selected task.</string>
+    <string name="txt_spars">These are the Spare-Kit bag items. Please select only the Spare-kit items that related to task.</string>
+    <string name="txt_spars_details">Spares Details</string>
+    <string name="txt_indent_details">Indent Details</string>
+    <string name="txt_upload_img">Upload Images</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_maintenance_summary">Maintenace Summary</string>
+    <array name="details">
+        <item>Personal</item>
+        <item>Location</item>
+        <item>Usage</item>
+        <item>Employment</item>
+        <item>Loan</item>
+    </array>
+
+    // version-2
+    // Login page
+    <string name="txt_tanker_transactions">Tanker Transactions</string>
+    <string name="txt_forgot_password">Forgot Password ?</string>
+    <string name="txt_user_name">User Name</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_login">Login</string>
+    <string name="name">Name</string>
+    <string name="channel">Channel</string>
+    <string name="mobile">Mobile</string>
+    <string name="requested_on">Requested on</string>
+    <string name="email">Email</string>
+    <string name="Tasks">Tasks</string>
+    <string name="schedules_info">Schedules Info</string>
+    <string name="indentSpares_info">Indents Spares Info</string>
+    <string name="peopleanddates">People/Dates</string>
+    <string name="order_status">Order Status</string>
+    <string name="technician">Technician</string>
+    <string name="sla_planned_time">SLA Planned Time</string>
+
+    <string name="general_info">General Information</string>
+    <string name="ticket_info">Ticket Information</string>
+    <string name="category">Category</string>
+    <string name="equipment">Equipment</string>
+    <string name="issue_type">Issue Type </string>
+    <string name="location">Location</string>
+    <string name="txt_report_subcategory">Subcategory </string>
+    <string name="you_are_in_warehouse_building">You are in Warehouse Building</string>
+
+    <string name="indent_details_info">Indent Details</string>
+    <string name="indent_request_info">Raise Indent Request</string>
+    <string name="spare_kit_bag_info">Spares used</string>
+
+    <string name="open">Open</string>
+    <string name="fixed">Fixed</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="cancel">Cancel</string>
+
+    <string name="ticketId">TicketId</string>
+    <string name="title">Title</string>
+    <string name="status">Status</string>
+    <string name="created_date">Created Date</string>
+    <string name="txt_category">Category</string>
+    <string name="description">Description</string>
+
+    <string name="take_or_upload_picture">Take or Upload Picture</string>
+
+
+
+</resources>

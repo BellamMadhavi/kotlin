@@ -1,0 +1,338 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.3"
+                android:text="Ticket Id"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.01"
+                android:text=":"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_indentSpareinfo_ticketid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.68"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.3"
+                android:text="Unit Id"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.01"
+                android:text=":"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_indentSpareinfo_unitid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.68"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_weight="0.3"
+                android:text="Indent Status"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_weight="0.01"
+                android:text=":"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_indentSpareinfo_indentStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_weight="0.68"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.3"
+                android:text="Requested Date"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.01"
+                android:text=":"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_indentSpareinfo_requestedDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.68"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.3"
+                android:text="Dispatched Date"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.01"
+                android:text=":"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_indentSpareinfo_dispatcheddate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.68"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.3"
+                android:text="Item Name"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.01"
+                android:text=":"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_indentSpareinfo_itemName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.68"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.3"
+                android:text="Req Field Req"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.01"
+                android:text=":"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_indentSpareinfo_reqfieldreq"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.68"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.3"
+                android:text="Received Date"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.01"
+                android:text=":"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_indentSpareinfo_receiveddate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="0.68"
+                android:textColor="@color/colorHeadingOne"
+                android:textSize="@dimen/dimen_14sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:background="@color/dividerColor" />
+
+    </LinearLayout>
+
+</LinearLayout>
