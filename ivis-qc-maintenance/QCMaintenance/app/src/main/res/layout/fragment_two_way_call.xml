@@ -1,0 +1,170 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/two_ways_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ivis.qcauditapp.fragment.TwoWayCallFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/layout1"
+                layout="@layout/top_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:layout_below="@+id/layout1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layout1"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="5dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_gravity="start"
+                                android:background="@color/colorPrimary"
+                                android:gravity="center"
+                                android:text="Audio call ( Two way ) "
+                                android:textColor="@color/white"
+                                android:textSize="18dp" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:id="@+id/working_status"
+                                android:visibility="gone"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Working Status??   Yes   No"
+                                    android:layout_weight="0.7"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/adapter_text_color"
+                                    android:textSize="18dp" />
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Working Status"
+                                    android:visibility="invisible"
+                                    android:layout_weight="0.3"
+                                    android:textColor="@color/adapter_text_color"
+                                    android:textSize="18dp" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:orientation="horizontal">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/two_ways_list_recyclerview"
+                                    android:layout_width="0dp"
+                                     android:layout_gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.7" />
+
+                                <LinearLayout
+                                    android:id="@+id/call_layout"
+                                    android:layout_width="0dp"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.3">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:layout_centerInParent="true"
+                                        android:layout_height="wrap_content">
+
+                                        <!-- Oval shape background -->
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="10dp"
+                                            android:layout_marginEnd="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/call_bg_layout" />
+
+                                        <!-- ImageView -->
+                                        <ImageView
+                                            android:id="@+id/imageView"
+                                            android:layout_width="20dp"
+                                            android:layout_height="30dp"
+                                            android:layout_centerVertical="true"
+
+                                            android:layout_marginStart="30dp"
+                                            android:src="@drawable/call" />
+
+                                        <!-- TextView -->
+                                        <TextView
+                                            android:id="@+id/textView_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:layout_marginEnd="10dp"
+                                            android:textSize="17dp"
+                                            android:textStyle="bold"
+                                            android:layout_toEndOf="@id/imageView"
+                                            android:text="Call"
+                                            android:textColor="@color/white" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/bottom_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+</FrameLayout>

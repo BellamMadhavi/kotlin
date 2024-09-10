@@ -1,0 +1,167 @@
+From 8429f70d2bae19d244650c23d00402a64ee31e51 Mon Sep 17 00:00:00 2001
+From: karre santhosh <manikanta.gandikota@motivitylabs.com>
+Date: Tue, 13 Feb 2024 18:00:24 +0530
+Subject: [PATCH] api for spares list added, not working
+
+---
+ .../com/ivis/qcauditapp/di/NetworkModule.kt   | 21 ++++++++++++++++++-
+ .../fragment/SparsDetailsFragment.kt          |  6 +++---
+ .../ivis/qcauditapp/repository/Repository.kt  | 16 ++++++++++----
+ .../java/com/ivis/qcauditapp/retrofit/API.kt  |  6 ++++++
+ .../com/ivis/qcauditapp/utils/Constants.kt    |  4 +++-
+ .../indent/IndentDetailsViewModel.kt          |  2 ++
+ 6 files changed, 46 insertions(+), 9 deletions(-)
+
+diff --git a/app/src/main/java/com/ivis/qcauditapp/di/NetworkModule.kt b/app/src/main/java/com/ivis/qcauditapp/di/NetworkModule.kt
+index d457925..abce82d 100644
+--- a/app/src/main/java/com/ivis/qcauditapp/di/NetworkModule.kt
++++ b/app/src/main/java/com/ivis/qcauditapp/di/NetworkModule.kt
+@@ -31,25 +31,44 @@ class NetworkModule {
+     @Singleton
+     @Provides
+     @Named("MaintenancebaseUrl")
+-    fun providesRetrofitForBaseUrl2(): Retrofit {
++    fun providesRetrofitForBaseUrl(): Retrofit {
+         return Retrofit.Builder()
+             .baseUrl(Constants.Maintenance_BASE_URL)
+             .addConverterFactory(GsonConverterFactory.create())
+             .build()
+     }
+ 
++    @Singleton
++    @Provides
++    @Named("MaintenancebaseUrll")
++    fun providesRetrofitForBaseUrll(): Retrofit {
++        return Retrofit.Builder()
++            .baseUrl(Constants.Maintenance_BASE_URL2)
++            .addConverterFactory(GsonConverterFactory.create())
++            .build()
++    }
++
+     @Singleton
+     @Provides
+     @Named("QCbaseUrl")
+     fun providesAPIForBaseUrl1(@Named("QCbaseUrl") retrofit: Retrofit): API {
+         return retrofit.create(API::class.java)
+     }
++
+     @Singleton
+     @Provides
+     @Named("MaintenancebaseUrl")
+     fun providesAPIForBaseUrl2(@Named("MaintenancebaseUrl") retrofit: Retrofit): API {
+         return retrofit.create(API::class.java)
+     }
++
++    @Singleton
++    @Provides
++    @Named("MaintenancebaseUrll")
++    fun providesAPIForBaseUrll(@Named("MaintenancebaseUrll") retrofit: Retrofit): API {
++        return retrofit.create(API::class.java)
++    }
++
+ }
+ 
+ 
+diff --git a/app/src/main/java/com/ivis/qcauditapp/fragment/SparsDetailsFragment.kt b/app/src/main/java/com/ivis/qcauditapp/fragment/SparsDetailsFragment.kt
+index a1ac2e7..e96cc44 100644
+--- a/app/src/main/java/com/ivis/qcauditapp/fragment/SparsDetailsFragment.kt
++++ b/app/src/main/java/com/ivis/qcauditapp/fragment/SparsDetailsFragment.kt
+@@ -103,9 +103,9 @@ class SparsDetailsFragment : Fragment() {
+             two_ways_list_recyclerview.layoutManager = LinearLayoutManager(requireContext())
+             two_ways_list_recyclerview.adapter = indentDetailsAdapter
+ 
+-//            indentDetailsAdapter = IndentDetailsAdapter(sensorlist)
+-//            spars_list_recyclerview.layoutManager = LinearLayoutManager(requireContext())
+-//            spars_list_recyclerview.adapter = indentDetailsAdapter
++            indentDetailsAdapter = IndentDetailsAdapter(sensorlist)
++            spars_list_recyclerview.layoutManager = LinearLayoutManager(requireContext())
++            spars_list_recyclerview.adapter = indentDetailsAdapter
+         })
+         return view
+     }
+diff --git a/app/src/main/java/com/ivis/qcauditapp/repository/Repository.kt b/app/src/main/java/com/ivis/qcauditapp/repository/Repository.kt
+index ba9962f..d4147f2 100644
+--- a/app/src/main/java/com/ivis/qcauditapp/repository/Repository.kt
++++ b/app/src/main/java/com/ivis/qcauditapp/repository/Repository.kt
+@@ -1,5 +1,6 @@
+ package com.qcauditapp.repository
+ 
++import android.util.Log
+ import androidx.lifecycle.LiveData
+ import androidx.lifecycle.MutableLiveData
+ import com.ivis.qcauditapp.activities.SingleLiveEvent
+@@ -28,7 +29,7 @@ import javax.inject.Inject
+ import javax.inject.Named
+ 
+ class Repository @Inject constructor(@Named("QCbaseUrl") private val QcBaseUrl: API,
+-                                     @Named("MaintenancebaseUrl") private val MaintenanceBaseurl: API) {
++                                     @Named("MaintenancebaseUrl") private val MaintenanceBaseurl: API, @Named("MaintenancebaseUrll") private val MaintenanceBaseurll: API) {
+     private val _products = SingleLiveEvent<LoginResponse>()
+     val products: LiveData<LoginResponse>
+         get() = _products
+@@ -470,9 +471,16 @@ private val _two_list_data= MutableLiveData<List<TwoWaySimStatus>>()
+     val SparesDetailsListData: LiveData<List<IndentDetails>>
+         get() = _spares_details_list_mut_live_data
+     suspend fun getSparesDetailsList(ticketId: String) {
+-        val result = MaintenanceBaseurl.getIndentDetailsList("990046", "1197", "Spare")
+-        if (result.isSuccessful && result.body() != null) {
+-            _spares_details_list_mut_live_data.postValue(result.body())
++        try {
++            val result = MaintenanceBaseurll.getSpareDetailsList("1758", "spare")
++            if (result.isSuccessful && result.body() != null) {
++                _spares_details_list_mut_live_data.postValue(result.body())
++            }
++            else {
++                Log.e("error", " body = " + result.errorBody());
++            }
++        } catch (e: Exception) {
++            println("Network error: ${e.message}")
+         }
+     }
+ }
+diff --git a/app/src/main/java/com/ivis/qcauditapp/retrofit/API.kt b/app/src/main/java/com/ivis/qcauditapp/retrofit/API.kt
+index 7fa23d2..2c0a8b5 100644
+--- a/app/src/main/java/com/ivis/qcauditapp/retrofit/API.kt
++++ b/app/src/main/java/com/ivis/qcauditapp/retrofit/API.kt
+@@ -157,4 +157,10 @@ interface API {
+         @Query("type") type: String
+     ): Response<List<IndentDetails>>
+ 
++    @GET("ticket/indentRequestbyfr?")
++    suspend  fun getSpareDetailsList(
++        @Query("frId") frId: String,
++        @Query("type") type: String
++    ): Response<List<IndentDetails>>
++
+ }
+\ No newline at end of file
+diff --git a/app/src/main/java/com/ivis/qcauditapp/utils/Constants.kt b/app/src/main/java/com/ivis/qcauditapp/utils/Constants.kt
+index 91e1506..2aaa96d 100644
+--- a/app/src/main/java/com/ivis/qcauditapp/utils/Constants.kt
++++ b/app/src/main/java/com/ivis/qcauditapp/utils/Constants.kt
+@@ -2,5 +2,7 @@ package com.qcauditapp.utils
+ 
+ object Constants {
+   const val QC_BASE_URL = "http://beat.iviscloud.net:8080/qc-report/"
+-    const val Maintenance_BASE_URL= "http://fieldapp.iviscloud.net:8090/ivis-mobile-app/"
++  const val Maintenance_BASE_URL= "http://fieldapp.iviscloud.net:8090/ivis-mobile-app/"
++  const val Maintenance_BASE_URL2 = "http://dev2-v1-crm.iviscloud.net:8443/ivis-mobile-app/"
++
+ }
+\ No newline at end of file
+diff --git a/app/src/main/java/com/ivis/qcauditapp/viewmodels/maintenance/indent/IndentDetailsViewModel.kt b/app/src/main/java/com/ivis/qcauditapp/viewmodels/maintenance/indent/IndentDetailsViewModel.kt
+index a901da8..ae5c616 100644
+--- a/app/src/main/java/com/ivis/qcauditapp/viewmodels/maintenance/indent/IndentDetailsViewModel.kt
++++ b/app/src/main/java/com/ivis/qcauditapp/viewmodels/maintenance/indent/IndentDetailsViewModel.kt
+@@ -26,6 +26,8 @@ class IndentDetailsViewModel @Inject constructor(private val repository: Reposit
+             repository.getSparesDetailsList(action)
+         }
+     }
++
+ }
+ 
+ 
++
+-- 
+2.34.1
+

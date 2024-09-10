@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/serialNumberTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:gravity="left|center"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:text="Name"/>
+
+        <TextView
+            android:id="@+id/maxQtyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:text="0"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:id="@+id/reqQtyEditText"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="14dp"
+            android:inputType="number"
+            android:enabled="false"
+            android:textColor="@color/black"
+            android:text=""
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/edit_request"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:src="@drawable/edit"/>
+
+        <ImageView
+            android:id="@+id/delImgView"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:src="@drawable/delete"/>
+
+
+
+    </LinearLayout>
+    <!-- Add a View to act as a line below each item -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/dividerColor" />
+</LinearLayout>

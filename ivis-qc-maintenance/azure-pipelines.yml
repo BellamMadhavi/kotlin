@@ -1,0 +1,31 @@
+trigger:
+- develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Gradle@2
+  inputs:
+    gradleWrapperFile: 'QCMaintenance/gradlew'
+    workingDirectory: '$(Build.SourcesDirectory)/QCMaintenance'
+    tasks: 'assembleDebug'
+    publishJUnitResults: false
+    javaHomeOption: 'JDKVersion'
+    gradleOptions: '-Xmx3072m'
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      ls
+      pwd
+      ls -lrth
+      
+- script: ls -la $(Build.SourcesDirectory)/QCMaintenance/app/build/outputs/apk/debug
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/QCMaintenance/app/build/outputs/apk/debug'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'

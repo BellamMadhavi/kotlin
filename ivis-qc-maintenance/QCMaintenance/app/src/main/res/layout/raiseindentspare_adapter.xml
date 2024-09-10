@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:layout_margin="@dimen/dimen_5dp"/>
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="Name"/>
+
+        <TextView
+            android:id="@+id/txt_qty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="QTY"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:id="@+id/txt_spars_s_no"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="Serial no"/>
+
+        <ImageView
+            android:id="@+id/btn_edit"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_20dp"
+            android:layout_weight="0.1"
+            android:text="Edit"
+            android:src="@drawable/edit"/>
+
+        <ImageView
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_20dp"
+            android:layout_weight="0.1"
+            android:text="Delete"
+            android:src="@drawable/delete"/>
+
+    </LinearLayout>
+
+    <!-- Add a View to act as a line below each item -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/dividerColor" />
+</LinearLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment android:id="@+id/LoginFragment"
+        android:name="com.ivis.qcauditapp.fragment.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action android:id="@+id/action_LoginFragment_to_DashboardFragment"
+            app:destination="@id/DashboardFragment" />
+
+    </fragment>
+
+    <fragment android:id="@+id/DashboardFragment"
+        android:name="com.ivis.qcauditapp.fragment.DashBoardFragment"
+        android:label="DashBoardFragment"
+        tools:layout="@layout/fragment_dash_board">
+
+        <action android:id="@+id/action_DashboardFragment_to_login"
+            app:destination="@id/LoginFragment" />
+
+        <action android:id="@+id/action_DashboardFragment_to_MaintenanceTicketsFragment"
+            app:destination="@id/MaintenanceTicketsFragment" />
+
+    </fragment>
+
+    <fragment android:id="@+id/MaintenanceTicketsFragment"
+        android:name="com.ivis.qcauditapp.fragment.MaintenanceTicketsFragment"
+        android:label="Maintenance Tickets Fragment"
+        tools:layout="@layout/fragment_maintenance_tickets">
+
+        <action android:id="@+id/action_maintenance_tickets_fragment_to_maintenance_ticket_details_fragment"
+            app:destination="@id/MaintenanceTicketDetailsFragment" />
+
+        <action android:id="@+id/action_maintenance_tickets_fragment_to_dashboard_fragment"
+            app:destination="@id/DashboardFragment" />
+
+        <action android:id="@+id/action_maintenance_tickets_fragment_to_login_fragment"
+            app:destination="@id/LoginFragment" />
+
+    </fragment>
+
+    <fragment android:id="@+id/MaintenanceTicketDetailsFragment"
+        android:name="com.ivis.qcauditapp.fragment.MaintenanceTicketDetailsFragment"
+        android:label="Maintenance Ticket Details Fragment"
+        tools:layout="@layout/fragment_maintenance_ticket_details">
+
+        <action android:id="@+id/action_maintenance_ticket_details_fragment_maintenance_task_list_fragment"
+            app:destination="@id/MaintenanceTaskListFragment" />
+
+        <action android:id="@+id/action_maintenance_ticket_details_fragment_to_maintenance_tickets_fragment"
+            app:destination="@id/MaintenanceTicketsFragment" />
+
+        <action android:id="@+id/action_maintenance_ticket_details_fragment_to_login_fragment"
+            app:destination="@id/LoginFragment" />
+
+    </fragment>
+
+    <fragment android:id="@+id/MaintenanceTaskListFragment"
+        android:name="com.ivis.qcauditapp.fragment.MaintenanceTaskListFragment"
+        android:label="Maintenance TaskList Fragment"
+        tools:layout="@layout/fragment_maintenance_task_list">
+
+        <action android:id="@+id/action_maintenance_task_list_fragment_to_maintenance_taskform_fragment"
+            app:destination="@id/MaintenanceTaskFormFragment" />
+
+        <action android:id="@+id/action_maintenance_task_list_fragment_to_maintenance_ticket_details_fragment"
+            app:destination="@id/MaintenanceTicketDetailsFragment" />
+
+        <action android:id="@+id/action_maintenance_task_list_fragment_to_login_fragment"
+            app:destination="@id/LoginFragment" />
+
+    </fragment>
+
+    <fragment android:id="@+id/MaintenanceTaskFormFragment"
+        android:name="com.ivis.qcauditapp.fragment.MaintenanceTaskFormFragment"
+        android:label="Maintenance TaskForm Fragment"
+        tools:layout="@layout/maintenance_taskform">
+
+        <action android:id="@+id/action_maintenance_taskform_fragment_to_summary_details_fragment"
+            app:destination="@id/MaintenanceSummaryFragment" />
+
+        <action android:id="@+id/action_maintenance_taskform_fragment_to_spare_details_fragment"
+            app:destination="@id/SpareDetailsFragment" />
+
+        <action android:id="@+id/action_maintenance_taskform_fragment_to_maintenance_task_list_fragment"
+            app:destination="@id/MaintenanceTaskListFragment" />
+
+        <action android:id="@+id/action_maintenance_taskform_fragment_to_raise_indent_request"
+            app:destination="@id/RaiseIndentRequest" />
+
+        <action android:id="@+id/action_maintenance_taskform_fragment_to_login_fragment"
+            app:destination="@id/LoginFragment" />
+
+    </fragment>
+
+    <fragment android:id="@+id/SpareDetailsFragment"
+        android:name="com.ivis.qcauditapp.fragment.SparsDetailsFragment"
+        android:label="Spars Details Fragment"
+        tools:layout="@layout/fragment_spars_details">
+
+        <action android:id="@+id/action_spare_details_fragment_to_summary_details_fragment"
+            app:destination="@id/MaintenanceSummaryFragment" />
+
+        <action android:id="@+id/action_spare_details_fragment_to_maintenance_taskform_fragment"
+            app:destination="@id/MaintenanceTaskFormFragment" />
+
+        <action android:id="@+id/action_spare_details_fragment_to_login_fragment"
+            app:destination="@id/LoginFragment" />
+
+    </fragment>
+
+    <fragment android:id="@+id/MaintenanceSummaryFragment"
+        android:name="com.ivis.qcauditapp.fragment.MaintenanceSummaryFragment"
+        android:label="Maintenance Summary Fragment"
+        tools:layout="@layout/fragment_summary">
+
+        <action android:id="@+id/action_summary_fragment_to_ticket_list_fragment"
+            app:destination="@id/MaintenanceTicketsFragment" />
+
+        <action android:id="@+id/action_summary_fragment_to_spare_details_fragment"
+            app:destination="@id/SpareDetailsFragment" />
+
+        <action android:id="@+id/action_summary_fragment_to_dashboard_fragment"
+            app:destination="@id/DashboardFragment" />
+
+        <action android:id="@+id/action_summary_fragment_to_task_form_fragment"
+            app:destination="@id/MaintenanceTaskFormFragment" />
+
+        <action android:id="@+id/action_summary_fragment_to_indent_request_fragment"
+            app:destination="@id/RaiseIndentRequest" />
+
+        <action android:id="@+id/action_summary_fragment_to_login"
+            app:destination="@id/LoginFragment" />
+
+
+    </fragment>
+
+    <fragment android:id="@+id/RaiseIndentRequest"
+        android:name="com.ivis.qcauditapp.fragment.RaiseRequestFragment"
+        android:label="Raise Request Fragment"
+        tools:layout="@layout/fragment_indent_request">
+
+        <action android:id="@+id/action_indent_request_fragment_to_summary_fragment"
+            app:destination="@id/MaintenanceSummaryFragment" />
+
+        <action android:id="@+id/action_indent_request_fragment_to_task_form_fragment"
+            app:destination="@id/MaintenanceTaskFormFragment" />
+
+    </fragment>
+
+</navigation>
